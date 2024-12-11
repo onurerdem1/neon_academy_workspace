@@ -1,5 +1,12 @@
 import 'dart:developer';
 
+enum Team {
+  FlutterDeverloperTeam,
+  AndroidDeveloperTeam,
+  IosDeveloperTeam,
+  UIUXDesignerTeam
+}
+
 class NeonAcademyMember {
   String fullName;
   String title;
@@ -7,9 +14,11 @@ class NeonAcademyMember {
   String memberLevel;
   String homeTown;
   int age;
+  Team team;
   ContactInformation contactInformation;
+
   NeonAcademyMember(this.fullName, this.age, this.homeTown, this.horoscope,
-      this.memberLevel, this.title, this.contactInformation);
+      this.memberLevel, this.title, this.team, this.contactInformation);
 
   String toString() {
     return "NeonAcademyMember(name : $fullName, age : $age, homeTown : $homeTown, horoscope : $horoscope, memberLevel : $memberLevel, title : $title, contactInformation : $contactInformation)";
@@ -36,9 +45,10 @@ class Mentor extends NeonAcademyMember {
       String memberLevel,
       String homeTown,
       int age,
+      Team team,
       ContactInformation contactInformation,
       this.mentorLevel)
-      : super(fullName, age, homeTown, horoscope, memberLevel, title,
+      : super(fullName, age, homeTown, horoscope, memberLevel, title, team,
             contactInformation);
 
   String toString() {
@@ -55,6 +65,7 @@ void main() {
         "Terazi",
         "A1",
         "Flutter Developer",
+        Team.FlutterDeverloperTeam,
         ContactInformation("05524879515", "onure@gmail.com")),
     NeonAcademyMember(
         "Yusuf",
@@ -63,6 +74,7 @@ void main() {
         "Boğa",
         "A3",
         "Flutter Developer",
+        Team.AndroidDeveloperTeam,
         ContactInformation("05487415898", "yusuf1@gmail.com")),
     NeonAcademyMember(
         "Burak",
@@ -71,6 +83,7 @@ void main() {
         "Aslan",
         "A2",
         "Flutter Developer",
+        Team.IosDeveloperTeam,
         ContactInformation("05874521645", "burakk@gmail.com")),
     NeonAcademyMember(
         "Selim",
@@ -79,6 +92,7 @@ void main() {
         "Oğlak",
         "A4",
         "Flutter Developer",
+        Team.AndroidDeveloperTeam,
         ContactInformation("05442547896", "selim@gmail.com")),
     NeonAcademyMember(
       "Ayşe",
@@ -87,6 +101,7 @@ void main() {
       "Aslan",
       "B2",
       "UI/UX Designer",
+      Team.UIUXDesignerTeam,
       ContactInformation("05361234567", "ayse.designer@gmail.com"),
     ),
     NeonAcademyMember(
@@ -95,7 +110,8 @@ void main() {
       "Ankara",
       "Oğlak",
       "C3",
-      "Backend Developer",
+      "UI/UX Designer",
+      Team.UIUXDesignerTeam,
       ContactInformation("05031234567", "mert.dev@gmail.com"),
     ),
     NeonAcademyMember(
@@ -105,6 +121,7 @@ void main() {
       "Terazi",
       "A1",
       "Data Analyst",
+      Team.IosDeveloperTeam,
       ContactInformation("05551234567", "zehra.data@gmail.com"),
     ),
     NeonAcademyMember(
@@ -114,6 +131,7 @@ void main() {
       "Koç",
       "B4",
       "Flutter Developer",
+      Team.AndroidDeveloperTeam,
       ContactInformation("05461234567", "ahmet.flutter@gmail.com"),
     ),
     NeonAcademyMember(
@@ -123,6 +141,7 @@ void main() {
       "Koç",
       "A2",
       "Product Manager",
+      Team.FlutterDeverloperTeam,
       ContactInformation("05341234567", "elif.pm@gmail.com"),
     ),
   ];
@@ -181,6 +200,7 @@ void main() {
       "D1",
       "Ankara",
       40,
+      Team.FlutterDeverloperTeam,
       ContactInformation("05478963214", "gokhan.mentor@gmail.com"),
       "Expert");
   neonAcademyMembers.add(mentor);

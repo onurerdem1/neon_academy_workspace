@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:neon_academy_workspace/container_workspace.dart';
+import 'package:neon_academy_workspace/buttons.dart';
+import 'package:neon_academy_workspace/container_workspace.dart';
 
 void main() {
   runApp(MainApp());
@@ -10,6 +11,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Placeholder()); //ContainerWidget());
+    return const MaterialApp(
+      home: ButtonWidget(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
