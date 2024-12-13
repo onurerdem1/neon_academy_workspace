@@ -15,13 +15,22 @@ class NeonAcademyMember {
   String homeTown;
   int age;
   Team team;
+  int? motivationLevel;
   ContactInformation contactInformation;
 
   NeonAcademyMember(this.fullName, this.age, this.homeTown, this.horoscope,
       this.memberLevel, this.title, this.team, this.contactInformation);
 
   String toString() {
-    return "NeonAcademyMember(name : $fullName, age : $age, homeTown : $homeTown, horoscope : $horoscope, memberLevel : $memberLevel, title : $title, contactInformation : $contactInformation)";
+    return "NeonAcademyMember(name : $fullName, age : $age, homeTown : $homeTown, horoscope : $horoscope, memberLevel : $memberLevel, title : $title, contactInformation : $contactInformation,motivationLevel: $motivationLevel)";
+  }
+
+  void _setMotivationLevel(int? motivationLevel, int number) {
+    if (motivationLevel == null) {
+      motivationLevel = 1;
+    } else {
+      motivationLevel = number;
+    }
   }
 }
 
@@ -302,5 +311,54 @@ void main() {
       .toList();
   for (var member in sameJobList) {
     print(member.contactInformation.phoneNumber);
+  }
+
+  print("----------------");
+//Create a function that prints out a message based on the member's motivation level.
+//For example, if the motivation level is null, the function should print out "This member has no motivation level set"
+//and if the motivation level is greater than 5, the function should print out "This member is highly motivated".
+
+  void _showMotivationLevel(NeonAcademyMember member) {
+    if (member.motivationLevel == null) {
+      print("This member has no motivation level set");
+    } else if (member.motivationLevel! > 5) {
+      print("This member is highly motivated");
+    }
+  }
+
+  _showMotivationLevel(neonAcademyMembers.first);
+
+//Create a function that takes a member's motivation level as an input and returns
+// a string indicating whether the member is highly motivated, moderately motivated, or not motivated at all.
+
+  void _returnMotivation(NeonAcademyMember member) {
+    if (member.motivationLevel == null) {
+      print("not motivated");
+    } else if (member.motivationLevel! < 5) {
+      print("moderately motivated");
+    } else {
+      print("highly motivated");
+    }
+  }
+
+//Create a function that takes a member and returns the member's motivation level
+// if it is not null, otherwise it returns 0. ( You should use null aware for this task)
+
+  int? _showMemberMotivation(NeonAcademyMember member) {
+    if (member.motivationLevel == null) {
+      return 0;
+    } else {
+      return member.motivationLevel;
+    }
+  }
+
+//Create a function that takes a member and a target motivation level as inputs, and returns true if
+//the member's current motivation level is greater than or equal to the target level, or false otherwise.
+
+  bool _memberMotivationLevel(NeonAcademyMember member, int motivationLevel) {
+    if (member.motivationLevel! >= motivationLevel) {
+      return true;
+    } else
+      return false;
   }
 }

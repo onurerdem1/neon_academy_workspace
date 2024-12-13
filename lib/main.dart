@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:neon_academy_workspace/buttons.dart';
 import 'package:neon_academy_workspace/container_workspace.dart';
+import 'package:neon_academy_workspace/sliders.dart';
+import 'package:neon_academy_workspace/textfields.dart';
 
 void main() {
   runApp(MainApp());
@@ -12,7 +14,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ButtonWidget(),
+      home: SliderWidget(),
       debugShowCheckedModeBanner: false,
     );
   }
