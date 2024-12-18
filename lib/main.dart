@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:neon_academy_workspace/buttons.dart';
 import 'package:neon_academy_workspace/container_workspace.dart';
+import 'package:neon_academy_workspace/flexible_class.dart';
 import 'package:neon_academy_workspace/list_view.dart';
+import 'package:neon_academy_workspace/shared_preferences.dart';
 import 'package:neon_academy_workspace/sliders.dart';
 import 'package:neon_academy_workspace/textfields.dart';
 
@@ -14,9 +16,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: ListViewWidget(),
+        backgroundColor: Colors.grey[200],
+        body: FlexibleClass(),
       ),
       debugShowCheckedModeBanner: false,
     );
