@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neon_academy_workspace/buttons.dart';
 import 'package:neon_academy_workspace/container_workspace.dart';
+import 'package:neon_academy_workspace/data_table.dart';
 import 'package:neon_academy_workspace/expanded_padding.dart';
 import 'package:neon_academy_workspace/flexible_class.dart';
 import 'package:neon_academy_workspace/futuretech_challange.dart';
@@ -28,7 +29,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: SetstateMobx(),
+        body: DataTableWidget(),
       ),
       debugShowCheckedModeBanner: false,
     );
