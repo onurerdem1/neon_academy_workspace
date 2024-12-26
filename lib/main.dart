@@ -9,6 +9,7 @@ import 'package:neon_academy_workspace/futuretech_challange.dart';
 import 'package:neon_academy_workspace/grid_view.dart';
 import 'package:neon_academy_workspace/linear_progress.dart';
 import 'package:neon_academy_workspace/list_view.dart';
+import 'package:neon_academy_workspace/lottie.dart';
 import 'package:neon_academy_workspace/notification_center.dart';
 import 'package:neon_academy_workspace/picker.dart';
 import 'package:neon_academy_workspace/scroll_view.dart';
@@ -32,7 +33,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: ComedyClubHomeScreen(),
+        body: LottieWidget(),
       ),
       debugShowCheckedModeBanner: false,
     );
