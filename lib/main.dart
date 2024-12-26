@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neon_academy_workspace/buttons.dart';
+import 'package:neon_academy_workspace/comedy_club_challange.dart';
 import 'package:neon_academy_workspace/container_workspace.dart';
 import 'package:neon_academy_workspace/data_table.dart';
 import 'package:neon_academy_workspace/expanded_padding.dart';
@@ -31,7 +32,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: DecryptScreen(),
+        body: ComedyClubHomeScreen(),
       ),
       debugShowCheckedModeBanner: false,
     );
