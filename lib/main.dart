@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:neon_academy_workspace/admob.dart';
 import 'package:neon_academy_workspace/buttons.dart';
 import 'package:neon_academy_workspace/comedy_club_challange.dart';
 import 'package:neon_academy_workspace/container_workspace.dart';
@@ -7,6 +9,7 @@ import 'package:neon_academy_workspace/expanded_padding.dart';
 import 'package:neon_academy_workspace/flexible_class.dart';
 import 'package:neon_academy_workspace/futuretech_challange.dart';
 import 'package:neon_academy_workspace/grid_view.dart';
+import 'package:neon_academy_workspace/hero.dart';
 import 'package:neon_academy_workspace/linear_progress.dart';
 import 'package:neon_academy_workspace/list_view.dart';
 import 'package:neon_academy_workspace/lottie.dart';
@@ -23,6 +26,8 @@ import 'package:neon_academy_workspace/tabbar.dart';
 import 'package:neon_academy_workspace/textfields.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   runApp(MainApp());
 }
 
@@ -33,7 +38,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: LottieWidget(),
+        body: HomePageAds(),
       ),
       debugShowCheckedModeBanner: false,
     );
