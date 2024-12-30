@@ -38,7 +38,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: HomePageAds(),
+        body: SplashScreen(),
       ),
       debugShowCheckedModeBanner: false,
     );
