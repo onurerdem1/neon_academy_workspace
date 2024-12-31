@@ -5,6 +5,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:neon_academy_workspace/hive/hive.dart';
 import 'package:neon_academy_workspace/hive/task.dart';
 import 'package:neon_academy_workspace/screen_animations.dart';
+import 'package:neon_academy_workspace/sqflite/home_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: TaskHomeScreen(),
+        body: PeopleFormScreen(),
       ),
       debugShowCheckedModeBanner: false,
     );
