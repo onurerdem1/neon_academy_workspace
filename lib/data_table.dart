@@ -71,6 +71,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   }
 }
 
+// ignore: must_be_immutable
 class DetailScreen extends StatelessWidget {
   Info passenger;
   DetailScreen({super.key, required this.passenger});

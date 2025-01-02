@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 enum Team {
   FlutterDeverloperTeam,
   AndroidDeveloperTeam,

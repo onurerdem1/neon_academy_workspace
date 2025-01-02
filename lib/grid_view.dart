@@ -107,6 +107,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
   }
 }
 
+// ignore: must_be_immutable
 class DetailPage extends StatelessWidget {
   Apps app;
   DetailPage({super.key, required this.app});

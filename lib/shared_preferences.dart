@@ -79,7 +79,6 @@ class _SharedPreferencesWidgetState extends State<SharedPreferencesWidget> {
                     onPressed: () async {
                       await _saveInfo(
                           visitedCountry.text, int.parse(visitedTimes.text));
-                      var name = visitedCountry.text + visitedTimes.text;
                       await _getInfotoList();
                       setState(() {});
                     },

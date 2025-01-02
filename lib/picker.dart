@@ -6,6 +6,7 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
+// ignore: must_be_immutable
 class PickerWidget extends StatelessWidget {
   late XFile? image;
   String? selectedFont;

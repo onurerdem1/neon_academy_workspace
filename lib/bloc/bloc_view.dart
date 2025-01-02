@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neon_academy_workspace/bloc/counter_bloc.dart';
 import 'package:neon_academy_workspace/bloc/counter_event.dart';
 import 'package:neon_academy_workspace/bloc/counter_state.dart';
-import 'package:path/path.dart';
 
 class BlocView extends StatelessWidget {
   @override

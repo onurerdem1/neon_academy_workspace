@@ -43,6 +43,5 @@ class _ContainerWidgetState extends State<ContainerWidget> {
         ),
       ),
     );
-    ;
   }
 }

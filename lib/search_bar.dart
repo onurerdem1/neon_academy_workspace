@@ -16,7 +16,6 @@ class _SearchBarState extends State<SearchBarWidget> {
   void initState() {
     super.initState();
     randomNames = generateRandomNames(50);
-    var randomname = randomNames[1];
     randomNames.contains("Mini Mouse") ? null : randomNames.add("Mini Mouse");
   }
 
