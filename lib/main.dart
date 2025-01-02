@@ -2,16 +2,9 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:neon_academy_workspace/hive/hive.dart';
-import 'package:neon_academy_workspace/hive/task.dart';
-import 'package:neon_academy_workspace/screen_animations.dart';
-import 'package:neon_academy_workspace/sqflite/home_view.dart';
+import 'package:neon_academy_workspace/dio/dio_view.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  Hive.registerAdapter(TaskAdapter());
-  await Hive.openBox<Task>("tasksbox");
   runApp(MainApp());
 }
 
@@ -22,7 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: PeopleFormScreen(),
+        body: MelodyMakerApp(),
       ),
       debugShowCheckedModeBanner: false,
     );
