@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neon_academy_workspace/bloc/bloc_view.dart';
 import 'package:neon_academy_workspace/bloc/counter_bloc.dart';
+import 'package:neon_academy_workspace/lottie.dart';
+import 'package:neon_academy_workspace/stepper.dart';
 
 void main() async {
   runApp(
@@ -15,11 +17,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          body: BlocProvider(
-        create: (context) => CounterBloc(),
-        child: BlocView(),
-      )),
+      home: StepperApp(),
       debugShowCheckedModeBanner: false,
     );
   }
