@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:neon_academy_workspace/authentication/login/view/login_view.dart';
 import 'package:neon_academy_workspace/bloc/bloc_view.dart';
 import 'package:neon_academy_workspace/bloc/counter_bloc.dart';
 import 'package:neon_academy_workspace/lottie.dart';
@@ -17,7 +18,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: StepperApp(),
+      home: LoginScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
