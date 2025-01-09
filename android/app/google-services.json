@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "929610038844",
+    "project_id": "neonacademyworkspace",
+    "storage_bucket": "neonacademyworkspace.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929610038844:android:8440f54778a345dd9acd39",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtvy372pZVtuW399IkhzGAVCf-fXLD-dE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
