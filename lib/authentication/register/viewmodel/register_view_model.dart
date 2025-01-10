@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:neon_academy_workspace/authentication/login/view/login_view.dart';
 
@@ -18,9 +19,17 @@ class RegisterViewModel extends ChangeNotifier {
   bool get isPasswordVisible1 => _isPasswordVisible1;
   bool get isPasswordVisible2 => _isPasswordVisible2;
 
-  void registerButtonAction(BuildContext context) {
+  Future<void> registerButtonAction(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
-      navigateToLogin(context);
+      try {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+            email: _emailController.text, password: _passwordController1.text);
+        print("Register Succesfull");
+        await Future.delayed(const Duration(seconds: 2));
+        navigateToLogin(context);
+      } catch (e) {
+        print(e);
+      }
     }
   }
 

@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:neon_academy_workspace/authentication/home/view/home_view.dart';
 import 'package:neon_academy_workspace/authentication/register/view/register_view.dart';
 
@@ -19,9 +21,18 @@ class LoginViewModel extends ChangeNotifier {
 
   Future<void> _init() async {}
 
-  void loginButtonAction(BuildContext context) {
+  Future<void> loginButtonAction(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
-      navigatetoHome(context);
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: emailController.text, password: passwordController.text);
+        print("Login Succesfull");
+        navigatetoHome(context);
+      } catch (e) {
+        print(e);
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("Login Unsuccesfull")));
+      }
     }
   }
 
