@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neon_academy_workspace/authentication/login/view/login_view.dart';
-import 'package:neon_academy_workspace/bloc/bloc_view.dart';
-import 'package:neon_academy_workspace/bloc/counter_bloc.dart';
-import 'package:neon_academy_workspace/lottie.dart';
-import 'package:neon_academy_workspace/stepper.dart';
+import 'package:neon_academy_workspace/authentication/login/viewmodel/login_view_model.dart';
+import 'package:neon_academy_workspace/authentication/register/viewmodel/register_view_model.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
-  runApp(
-    MainApp(),
-  );
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => RegisterViewModel()),
+      ChangeNotifierProvider(create: (context) => LoginViewModel()),
+    ],
+    child: MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {

@@ -3,12 +3,31 @@ import 'package:neon_academy_workspace/authentication/home/view/home_view.dart';
 import 'package:neon_academy_workspace/authentication/register/view/register_view.dart';
 
 class LoginViewModel extends ChangeNotifier {
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  bool _isPasswordVisible = false;
+
+  TextEditingController get emailController => _emailController;
+  TextEditingController get passwordController => _passwordController;
+  GlobalKey<FormState> get formKey => _formKey;
+  bool get isPasswordVisible => _isPasswordVisible;
+
   LoginViewModel() {
     _init();
   }
 
-  Future<void> _init() async {
-    await Future.delayed(Duration(seconds: 3));
+  Future<void> _init() async {}
+
+  void loginButtonAction(BuildContext context) {
+    if (_formKey.currentState!.validate()) {
+      navigatetoHome(context);
+    }
+  }
+
+  void togglePasswordVisibility() {
+    _isPasswordVisible = !_isPasswordVisible;
+    notifyListeners();
   }
 
   void navigatetoHome(BuildContext context) {
@@ -37,7 +56,7 @@ class LoginViewModel extends ChangeNotifier {
   }
 
   void navigateToRegister(BuildContext context) {
-    Navigator.push(
+    Navigator.pushReplacement(
         context,
         PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>

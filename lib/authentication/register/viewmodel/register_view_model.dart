@@ -2,6 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:neon_academy_workspace/authentication/login/view/login_view.dart';
 
 class RegisterViewModel extends ChangeNotifier {
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController _passwordController1 = TextEditingController();
+  TextEditingController _passwordController2 = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  bool _isPasswordVisible1 = false;
+  bool _isPasswordVisible2 = false;
+  bool isMatched = false;
+
+  TextEditingController get emailController => _emailController;
+  TextEditingController get passwordController1 => _passwordController1;
+  TextEditingController get passwordController2 => _passwordController2;
+
+  GlobalKey<FormState> get formKey => _formKey;
+  bool get isPasswordVisible1 => _isPasswordVisible1;
+  bool get isPasswordVisible2 => _isPasswordVisible2;
+
+  void registerButtonAction(BuildContext context) {
+    if (_formKey.currentState!.validate()) {
+      navigateToLogin(context);
+    }
+  }
+
+  void togglePasswordVisibility1() {
+    _isPasswordVisible1 = !_isPasswordVisible1;
+    notifyListeners();
+  }
+
+  void togglePasswordVisibility2() {
+    _isPasswordVisible2 = !_isPasswordVisible2;
+    notifyListeners();
+  }
+
   void navigateToLogin(BuildContext context) {
     Navigator.pushReplacement(
       context,
@@ -20,8 +52,7 @@ class RegisterViewModel extends ChangeNotifier {
             child: child,
           );
         },
-        transitionDuration:
-            const Duration(milliseconds: 750), // Aynı geçiş süresi
+        transitionDuration: const Duration(milliseconds: 750),
       ),
     );
   }
