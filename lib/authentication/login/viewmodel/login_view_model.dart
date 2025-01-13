@@ -43,7 +43,7 @@ class LoginViewModel extends ChangeNotifier {
   }
 
   void navigatetoHome(BuildContext context) {
-    Navigator.push(
+    Navigator.pushReplacement(
         context,
         PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>
@@ -65,6 +65,8 @@ class LoginViewModel extends ChangeNotifier {
               );
             },
             transitionDuration: Duration(milliseconds: 750)));
+    emailController.clear();
+    passwordController.clear();
   }
 
   void navigateToRegister(BuildContext context) {
