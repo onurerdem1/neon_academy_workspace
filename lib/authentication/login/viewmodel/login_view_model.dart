@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:neon_academy_workspace/authentication/forgotPassword/view/forgot_password_view.dart';
 import 'package:neon_academy_workspace/authentication/home/view/home_view.dart';
 import 'package:neon_academy_workspace/authentication/register/view/register_view.dart';
 
@@ -31,7 +32,7 @@ class LoginViewModel extends ChangeNotifier {
       } catch (e) {
         print(e);
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Login Unsuccesfull")));
+            .showSnackBar(SnackBar(content: Text(e.toString())));
       }
     }
   }
@@ -42,7 +43,7 @@ class LoginViewModel extends ChangeNotifier {
   }
 
   void navigatetoHome(BuildContext context) {
-    Navigator.pushReplacement(
+    Navigator.push(
         context,
         PageRouteBuilder(
             pageBuilder: (context, animation, secondaryAnimation) =>
@@ -89,5 +90,34 @@ class LoginViewModel extends ChangeNotifier {
               );
             },
             transitionDuration: const Duration(milliseconds: 750)));
+    emailController.clear();
+    passwordController.clear();
+  }
+
+  void navigateToForgotPassword(BuildContext context) {
+    Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                const ForgotPasswordScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(1.0, 0.0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              var tween = Tween(
+                begin: begin,
+                end: end,
+              ).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 750)));
+    emailController.clear();
+    passwordController.clear();
   }
 }

@@ -187,7 +187,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         width: screenWidth * 0.9,
         child: const Text.rich(const TextSpan(
             text:
-                "By click the agree and continue button, you're agree to News App's ",
+                "By click the agree and continue button, you're agree to App's ",
             style: TextStyle(fontSize: 13),
             children: [
               TextSpan(

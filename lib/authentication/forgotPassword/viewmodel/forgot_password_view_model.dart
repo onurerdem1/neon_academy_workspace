@@ -2,45 +2,27 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:neon_academy_workspace/authentication/login/view/login_view.dart';
 
-class RegisterViewModel extends ChangeNotifier {
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  TextEditingController _passwordController1 = TextEditingController();
-  TextEditingController _passwordController2 = TextEditingController();
+class ForgotPasswordViewModel extends ChangeNotifier {
   TextEditingController _emailController = TextEditingController();
-  bool _isPasswordVisible1 = false;
-  bool _isPasswordVisible2 = false;
-  bool isMatched = false;
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   TextEditingController get emailController => _emailController;
-  TextEditingController get passwordController1 => _passwordController1;
-  TextEditingController get passwordController2 => _passwordController2;
-
   GlobalKey<FormState> get formKey => _formKey;
-  bool get isPasswordVisible1 => _isPasswordVisible1;
-  bool get isPasswordVisible2 => _isPasswordVisible2;
 
-  Future<void> registerButtonAction(BuildContext context) async {
+  Future<void> resetPassword(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
       try {
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(
-            email: _emailController.text, password: _passwordController1.text);
-        print("Register Succesfull");
-        await Future.delayed(const Duration(seconds: 2));
+        await FirebaseAuth.instance
+            .sendPasswordResetEmail(email: _emailController.text);
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("Reset Password Email Sent")));
         navigateToLogin(context);
       } catch (e) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(e.toString())));
         print(e);
       }
     }
-  }
-
-  void togglePasswordVisibility1() {
-    _isPasswordVisible1 = !_isPasswordVisible1;
-    notifyListeners();
-  }
-
-  void togglePasswordVisibility2() {
-    _isPasswordVisible2 = !_isPasswordVisible2;
-    notifyListeners();
   }
 
   void navigateToLogin(BuildContext context) {
@@ -65,7 +47,5 @@ class RegisterViewModel extends ChangeNotifier {
       ),
     );
     emailController.clear();
-    passwordController1.clear();
-    passwordController2.clear();
   }
 }

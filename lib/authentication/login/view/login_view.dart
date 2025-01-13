@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: screenHeight * 0.02,
               ),
-              forgotPassword(),
+              forgotPassword(loginViewModel),
               const Expanded(
                 child: SizedBox(),
               ),
@@ -167,12 +167,15 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget forgotPassword() {
+  Widget forgotPassword(LoginViewModel viewModel) {
     return GestureDetector(
       child: Text(
         "Forgot Password?",
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
       ),
+      onTap: () {
+        viewModel.navigateToForgotPassword(context);
+      },
     );
   }
 
