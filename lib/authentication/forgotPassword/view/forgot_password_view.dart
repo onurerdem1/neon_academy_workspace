@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:neon_academy_workspace/authentication/forgotPassword/viewmodel/forgot_password_view_model.dart';
 import 'package:provider/provider.dart';
 
